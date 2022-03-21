@@ -5,7 +5,7 @@
     <div class="container m-1 ">
         <div class="card ">
             <div class="card-body ">
-            <form method="POST" action="" >
+            <form method="POST" action="{{route('posts_search') }}" >
                 @csrf
                     <label class="p-1 ">Selecciona una fecha inicial:</label>
                     <input name="date_ini" value="date" type="date"  id="date_ini" >
@@ -50,3 +50,4 @@
     @endforeach
 
 @endsection
+

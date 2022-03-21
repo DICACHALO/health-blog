@@ -22,10 +22,16 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+// Routes for administrator role or member role
 Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/admin', function () {
       return view('admin.dashboard');
     })->name('dashboard');
   });
 
+// Route to list public post
 Route::get('/', [App\Http\Controllers\PostController::class, 'index']);
+
+// Route to results after searching posts.
+
+Route::post('/search', [App\Http\Controllers\PostController::class, 'search'])->name('posts_search');
