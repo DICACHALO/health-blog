@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
+use CArbon\Carbon;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
@@ -52,9 +52,9 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'birth_date' => ['required', 'date'],
-            
+            'password' => ['required', 'string', 'min:7', 'confirmed'],
+            'birth_date' => ['required', 'date', 'before:18 years ago'],  
+       
         ]);
     }
 

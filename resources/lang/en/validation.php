@@ -145,6 +145,9 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'birth_date' => [
+            'before' => 'Debes ser mayor de edad para registrarte en el sistema.'
+        ]
     ],
 
     /*

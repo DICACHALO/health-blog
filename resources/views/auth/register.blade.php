@@ -7,6 +7,18 @@
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
 
+                <!-- Error message because the user is not of legal age.  -->
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                <!-- End error message -->
+
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
@@ -43,6 +55,11 @@
                             <label class="col-md-4 col-form-label text-md-end">Fecha de nacimiento:</label>
                             <div class="col-md-6">
                             <input id="birth_date" type="date" class="form-control" name="birth_date" max=<?php $today=date("Y-m-d"); echo $today;?> required>
+                                @error('birth_date')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
 
@@ -81,4 +98,6 @@
         </div>
     </div>
 </div>
+
+
 @endsection
