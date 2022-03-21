@@ -18,16 +18,16 @@ class UserSeeder extends Seeder
         DB::table('users')->insert([
             'name' => 'Diana Chacón',
             'email' => 'dianachacon@gmail.com',
-            'birth_date'=> '2001-11-24 15:55:32',
+            'birth_date'=> '2001-11-24',
             'password' => Hash::make('123456789'),
-                        'user_type' => 'Member',
+            'user_type' => 'Member',
         ]);
 
         DB::table('users')->insert([
             'name' => 'admin',
             'email' => 'admin-blog@gmail.com',
             'password' => Hash::make('987654321'),
-            'birth_date'=> '2000-11-24 15:55:32',
+            'birth_date'=> '2000-11-24',
             'user_type' => 'Administrator',
         ]);
     }
