@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,9 +16,7 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function () {return view('welcome');});
 
 Auth::routes();
 
@@ -26,3 +27,5 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
       return view('admin.dashboard');
     })->name('dashboard');
   });
+
+Route::get('/', [App\Http\Controllers\PostController::class, 'index']);
