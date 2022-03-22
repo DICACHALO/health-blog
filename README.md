@@ -2,13 +2,13 @@
 
 ## About Project
 
-Una vez hayamos clonado el repositorio de nuestro proyecto Laravel en local, debemos:
+Una vez clonado el repositorio debemos:
 
 1. Instalar dependencias
 
-'composer install'
+`composer install`
 
-'npm install'
+`npm install`
 
 2. Crear una base de datos en PostgresSQL llamada health_blog
 
@@ -30,19 +30,19 @@ DB_PASSWORD=
 
 Para crear la nueva clave e insertarla automáticamente en el .env, ejecutaremos:
 
-'php artisan key:generate'
+`php artisan key:generate`
 
 
 5. Ejecutar migraciones
 
-'php artisan migrate'
+`php artisan migrate`
 
 
 6. Llenar algunos valores por defecto en la base de datos
 
-'php artisan db:seed --class=UserSeeder'
+`php artisan db:seed --class=UserSeeder`
 
-'php artisan db:seed --class=PostSeeder'
+`php artisan db:seed --class=PostSeeder`
 
 
 - **[Documentación](https://resisted-rainforest-8d9.notion.site/Health-blog-2213715f257f4c238f8c5434542d476b)**
