@@ -38,7 +38,7 @@
                                 <p>{{$post->description}}</p>
                             </div>
                             <div class="form-group">
-                            <p><i>Fecha: {{$post->published_at}}</i></p>
+                            <p><i>Fecha: {{$post->created_at}}</i></p>
                             </div>
                         </div>
                     </div>

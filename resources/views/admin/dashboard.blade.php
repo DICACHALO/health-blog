@@ -5,5 +5,5 @@
 @endsection
 
 @section('content')
-
+    @include('post.create')
 @endsection

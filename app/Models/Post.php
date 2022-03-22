@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property $post_id
  * @property $title
  * @property $description
- * @property $published_at
+ * @property $created_at
  * @property $user_id
  * @property $created_at
  * @property $updated_at
@@ -27,8 +27,8 @@ class Post extends Model
     static $rules = [
 		'title' => 'required',
 		'description' => 'required',
-		'published_at' => 'required'
-		
+		'created_at' => 'required',
+		'user_id' => 'required'
     ];
 
     protected $perPage = 30;
@@ -38,5 +38,5 @@ class Post extends Model
      *
      * @var array
      */
-    protected $fillable = ['title','description','published_at'];
+    protected $fillable = ['title','description','created_at', 'user_id'];
 }

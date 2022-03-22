@@ -35,3 +35,12 @@ Route::get('/', [App\Http\Controllers\PostController::class, 'index']);
 // Route to results after searching posts.
 
 Route::post('/search', [App\Http\Controllers\PostController::class, 'search'])->name('posts_search');
+
+// Route to list private post
+Route::get('/home', [App\Http\Controllers\PostController::class, 'list'])->name('posts_list');
+
+Route::get('/create', [App\Http\Controllers\PostController::class, 'store'])->name('store');
+
+Route::get('/create', [App\Http\Controllers\PostController::class, 'create'])->name('create');
+
+Route::resource('/posts', PostController::class)->middleware('auth');
